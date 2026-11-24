@@ -223,6 +223,44 @@ a{color:inherit;text-decoration:none}
 .seek-list li::before{content:"→";font-family:var(--f-display);color:var(--accent)}
 .side{margin-top:32px;font-family:var(--f-display);font-size:13.5px;color:var(--ink-2);line-height:1.6}
 
+/* ---------- media ---------- */
+#media h2{grid-column:4/13;font-family:var(--f-cjk-sans);font-size:64px;font-weight:400;line-height:1.2;letter-spacing:0}
+.media-intro{grid-column:4/12;margin:0;font-size:24px;line-height:1.5;max-width:57ch;letter-spacing:0;text-wrap:pretty}
+.media-platforms{grid-column:4/13;display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:24px;font-family:var(--f-display);font-size:14px;letter-spacing:0}
+.media-platforms button{border:0;background:none;padding:0 0 2px;font:inherit;color:inherit;cursor:pointer}
+.media-platforms [lang]{font-family:var(--f-cjk-sans)}
+.episodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gut);margin-top:56px}
+.episode{min-width:0;display:flex;flex-direction:column;align-items:start;border-top:1px solid var(--ink);padding-top:12px}
+.episode-cover{display:block;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--paper-2)}
+.episode-cover img{display:block;width:100%;height:100%;object-fit:contain;transition:opacity .25s ease}
+a.episode-cover:hover img{opacity:.88}
+.episode-meta{display:flex;justify-content:space-between;gap:12px;width:100%;margin-top:14px;font:12px/1.4 var(--f-display);color:var(--ink-2);letter-spacing:0}
+.episode h3{font:500 21px/1.5 var(--f-cjk-sans);letter-spacing:0;margin:10px 0 8px;text-wrap:pretty}
+.episode-title-en{display:block;margin-top:6px;font:400 16px/1.4 var(--f-display);color:var(--ink-2);letter-spacing:0;text-wrap:pretty}
+.episode p{font-size:18px;line-height:1.45;margin:0 0 22px;letter-spacing:0}
+.episode-watch{margin-top:auto;font:13px/1.5 var(--f-display);letter-spacing:0;text-decoration:underline;text-underline-offset:4px}
+@media (min-width:861px){
+  .episode{display:grid;grid-template-rows:subgrid;grid-row:span 5;row-gap:0}
+}
+@media (max-width:860px){
+  #media h2{grid-column:1/13;font-size:44px}
+  .media-intro,.media-platforms{grid-column:1/13}
+  .media-intro{font-size:22px}
+  .episodes{grid-template-columns:1fr;margin-top:40px;gap:36px}
+  .episode{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px;align-items:start}
+  .episode-cover{grid-column:1;grid-row:1/5}
+  .episode-meta,.episode h3,.episode p,.episode-watch{grid-column:2}
+  .episode-meta{margin-top:0}
+  .episode h3{font-size:20px}
+}
+@media (max-width:560px){
+  #media h2{font-size:40px}
+  .episode{display:flex}
+  .episode-meta{margin-top:14px}
+  .episode h3{font-size:21px}
+  .episode p{font-size:18px}
+}
+
 /* ---------- contact ---------- */
 .contact{padding-bottom:clamp(64px,8vw,120px)}
 .c-lead{grid-column:1/4;font-family:var(--f-display);font-size:13.5px;color:var(--ink-2);margin:0;padding-top:12px;max-width:22ch}
@@ -312,7 +350,7 @@ kbd{font-family:var(--f-display);font-size:11px;border:1px solid var(--rule);pad
   .brand .cn{display:none}
   .hero{padding-top:16px}
   .hero-g{row-gap:16px;grid-template-rows:auto auto auto auto}
-  .h-ink{width:min(100%,250px);justify-self:center;margin-top:0;margin-bottom:24px}
+  .h-ink{width:min(100%,250px);justify-self:center;margin-top:0;margin-bottom:44px}
   .h-ink figcaption{top:calc(100% + 8px);width:max-content;max-width:calc(100vw - 64px);font-size:11.5px;gap:8px}
   .h-vert{margin-top:0;font-size:12px;line-height:1.7}
   .h-name{display:flex;gap:14px;align-items:baseline;margin-top:0;line-height:.9}
@@ -342,8 +380,9 @@ kbd{font-family:var(--f-display);font-size:11px;border:1px solid var(--rule);pad
     <nav class="links" id="sectionLinks" aria-label="Sections">
       <a class="lnk" href="#profile">Profile</a>
       <a class="lnk" href="#work">Work</a>
-      <a class="lnk" href="#record">Record</a>
       <a class="lnk" href="#now">Now</a>
+      <a class="lnk" href="#media">Media</a>
+      <a class="lnk" href="#record">Record</a>
       <a class="lnk keep" href="#contact">Contact</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" title="Open navigation" aria-expanded="false" aria-controls="sectionLinks">
@@ -369,7 +408,7 @@ kbd{font-family:var(--f-display);font-size:11px;border:1px solid var(--rule);pad
       </figure>
       <p class="h-vert cn" lang="zh-Hans"><b>叶致瑜</b><span class="vx">　卡内基梅隆大学</span>　经济与政治　<span class="vx">二〇二八届</span></p>
 
-      <div class="h-lede"><p>I study how AI is governed in the US, the EU and China, and I build the tools when a team needs one.</p></div>
+      <div class="h-lede"><p>I study AI governance and US-China AI policy. I'm interested in how rules are made, how they work in practice, and who gets a say.</p></div>
       <h1 class="h-name"><span class="ln"><span>Andy</span></span><span class="ln"><span>Ye</span></span></h1>
     </div>
     <div class="shell g h-facts">
@@ -386,7 +425,7 @@ kbd{font-family:var(--f-display);font-size:11px;border:1px solid var(--rule);pad
       <header class="sh g" id="profile"><div class="sh-n"><span class="num">01</span><span class="cn" lang="zh-Hans">壹</span></div><h2>Profile</h2></header>
       <div class="g">
         <div class="prof-aside" data-rv><span class="big-cn" lang="zh-Hans">治</span><p>zhì · to govern, to put in order</p></div>
-        <p class="statement" data-rv style="--d:.08s">I work in the gap between a model and the world it lands in. I study the rules on AI deployment in <em>Washington, Brussels and Beijing</em>. My work has included policy research, treaty data collection and AI-assisted coding for research tools. Native English and Chinese means I read the law, and the news about it, in both.</p>
+        <p class="statement" data-rv style="--d:.08s">I study Economics and Politics at Carnegie Mellon. My work has included AI policy research, coding international treaty data, and building research tools. I work in English and Chinese, drawing on sources in both languages. Alongside research, I'm building a Chinese-language channel about AI risks and governance for people outside the field.</p>
         <dl class="facts" data-rv style="--d:.16s">
           <div><dt class="k">Education</dt><dd>Carnegie Mellon University<span class="sub">Economics &amp; Politics (CMIST), STEM-designated. Minors in SHIFT and Financial Management.</span></dd></div>
           <div><dt class="k">Grades</dt><dd><span class="num">3.88</span> cumulative<span class="sub"><span class="num">4.00</span> in the major. Dean's List, High Honors.</span></dd></div>
@@ -554,30 +593,17 @@ kbd{font-family:var(--f-display);font-size:11px;border:1px solid var(--rule);pad
     </div>
   </section>
 
-  <!-- ================= RECORD ================= -->
-  <section class="sec">
-    <div class="shell">
-      <header class="sh g" id="record"><div class="sh-n"><span class="num">03</span><span class="cn" lang="zh-Hans">叁</span></div><h2>Honors &amp; Activities</h2></header>
-      <ul class="rows" data-rv>
-        <li><span class="r-y num">2024 – 25</span><span class="r-t">Dean's List, High Honors</span><span class="r-d">Dietrich College, Carnegie Mellon</span></li>
-        <li><span class="r-y num">2026</span><span class="r-t">Friedman Fellowship</span><span class="r-d">Carnegie Mellon, supporting the CSET internship</span></li>
-        <li><span class="r-y num">2026 – now</span><span class="r-t">Pi Sigma Alpha</span><span class="r-d">Member, political science honor society; Alpha Nu Alpha chapter, Carnegie Mellon</span></li>
-        <li><span class="r-y num">2024 – now</span><span class="r-t">Carnegie AI Safety Initiative</span><span class="r-d">Executive since November 2026; alignment and governance reading groups.</span></li>
-      </ul>
-    </div>
-  </section>
-
   <!-- ================= NOW ================= -->
   <section class="sec">
     <div class="shell">
-      <header class="sh g" id="now"><div class="sh-n"><span class="num">04</span><span class="cn" lang="zh-Hans">肆</span></div><h2>Now</h2></header>
+      <header class="sh g" id="now"><div class="sh-n"><span class="num">03</span><span class="cn" lang="zh-Hans">叁</span></div><h2>Now</h2></header>
       <div class="g">
         <div class="now-l" data-rv>
           <span class="k">Questions I'm exploring</span>
           <ul class="questions">
-            <li>How can we get more people to care about AI safety?</li>
-            <li>What rules should govern AI, and how should they be made?</li>
-            <li>Once rules exist, how do we make sure they work in practice?</li>
+            <li>How can we get more people to care about AI risks and governance?</li>
+            <li>What could the US and China agree to limit, and how could each side verify compliance?</li>
+            <li>How can rules hold up when competition creates pressure to move faster than safety allows?</li>
           </ul>
         </div>
         <div class="now-r" data-rv style="--d:.1s">
@@ -594,10 +620,62 @@ kbd{font-family:var(--f-display);font-size:11px;border:1px solid var(--rule);pad
     </div>
   </section>
 
+  <!-- ================= MEDIA ================= -->
+  <section class="sec">
+    <div class="shell">
+      <header class="sh g" id="media"><div class="sh-n"><span class="num">04</span><span class="cn" lang="zh-Hans">肆</span></div><h2 lang="zh-Hans">致瑜不至于</h2></header>
+      <div class="g">
+        <p class="media-intro">I make Chinese-language videos about AI risks, safety and governance, starting with questions people encounter in everyday life. I work from primary sources, explain what is at stake, and offer my own judgment on how seriously we should take it.</p>
+        <nav class="media-platforms" aria-label="Channel platforms">
+          <a class="lnk" href="https://www.youtube.com/channel/UC345RdKJtsvHte9yE3hUofw" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a class="lnk" href="https://www.douyin.com/user/MS4wLjABAAAAE6JS6tSXHF0icoeyHa6cwH8mFh3guylXTDlRzAibJ5Zaqb6UXzYnuWsoUvBEVSTm" target="_blank" rel="noopener noreferrer" lang="zh-Hans">抖音</a>
+          <a class="lnk" href="https://www.rednote.com/user/profile/65510335000000000802ea3e" target="_blank" rel="noopener noreferrer" lang="zh-Hans">小红书</a>
+          <button class="lnk" type="button" data-channels-open aria-haspopup="dialog" aria-controls="channelsDialog" lang="zh-Hans">视频号</button>
+        </nav>
+      </div>
+      <div class="episodes">
+        <article class="episode">
+          <a class="episode-cover" href="https://youtu.be/RhD72nJmGOY" target="_blank" rel="noopener noreferrer" aria-label="Watch the Riemann hypothesis episode on YouTube"><img src="riemann-cover.png" width="1440" height="1080" loading="lazy" decoding="async" alt=""/></a>
+          <div class="episode-meta"><span>Are We Cooked?</span><span class="num">3:56</span></div>
+          <h3><span lang="zh-Hans">AI证明了黎曼猜想，却没人看得懂？</span><span class="episode-title-en" lang="en">AI proved the Riemann hypothesis. But can anyone understand it?</span></h3>
+          <p>What happens when AI produces proofs we cannot understand? And how do we control a system whose reasoning we cannot follow?</p>
+          <a class="episode-watch" href="https://youtu.be/RhD72nJmGOY" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+        </article>
+        <article class="episode">
+          <a class="episode-cover" href="https://www.youtube.com/watch?v=0OD_o11ajDg" target="_blank" rel="noopener noreferrer" aria-label="Watch the METR episode on YouTube"><img src="metr-cover.png" width="1440" height="1080" loading="lazy" decoding="async" alt=""/></a>
+          <div class="episode-meta"><span>AI research &amp; safety</span><span class="num">9:45</span></div>
+          <h3><span lang="zh-Hans">人间一年，Anthropic两年！</span><span class="episode-title-en" lang="en">One year for us, two for Anthropic!</span></h3>
+          <p>When AI accelerates AI research itself, can safety work keep pace?</p>
+          <a class="episode-watch" href="https://www.youtube.com/watch?v=0OD_o11ajDg" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+        </article>
+        <article class="episode">
+          <a class="episode-cover" href="https://www.youtube.com/watch?v=wji99KSlauo" target="_blank" rel="noopener noreferrer" aria-label="Watch the AI legislation episode on YouTube"><img src="ai-bill-cover.png" width="1440" height="1080" loading="lazy" decoding="async" alt=""/></a>
+          <div class="episode-meta"><span>AI legislation</span><span class="num">11:19</span></div>
+          <h3><span lang="zh-Hans">AI 害死 50 个人不算灾难？</span><span class="episode-title-en" lang="en">AI kills 50 people. That doesn't count as a catastrophe?</span></h3>
+          <p>What should count as an AI catastrophe? A closer look at Anthropic's draft bill and California's SB 53.</p>
+          <a class="episode-watch" href="https://www.youtube.com/watch?v=wji99KSlauo" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RECORD ================= -->
+  <section class="sec">
+    <div class="shell">
+      <header class="sh g" id="record"><div class="sh-n"><span class="num">05</span><span class="cn" lang="zh-Hans">伍</span></div><h2>Honors &amp; Activities</h2></header>
+      <ul class="rows" data-rv>
+        <li><span class="r-y num">2024 – 25</span><span class="r-t">Dean's List, High Honors</span><span class="r-d">Dietrich College, Carnegie Mellon</span></li>
+        <li><span class="r-y num">2026</span><span class="r-t">Friedman Fellowship</span><span class="r-d">Carnegie Mellon, supporting the CSET internship</span></li>
+        <li><span class="r-y num">2026 – now</span><span class="r-t">Pi Sigma Alpha</span><span class="r-d">Member, political science honor society; Alpha Nu Alpha chapter, Carnegie Mellon</span></li>
+        <li><span class="r-y num">2024 – now</span><span class="r-t">Carnegie AI Safety Initiative</span><span class="r-d">Executive since November 2026; alignment and governance reading groups.</span></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- ================= CONTACT ================= -->
   <section class="sec contact">
     <div class="shell">
-      <header class="sh g" id="contact"><div class="sh-n"><span class="num">05</span><span class="cn" lang="zh-Hans">伍</span></div><h2>Contact</h2><p class="sh-note">Replies within a few days</p></header>
+      <header class="sh g" id="contact"><div class="sh-n"><span class="num">06</span><span class="cn" lang="zh-Hans">陆</span></div><h2>Contact</h2><p class="sh-note">Replies within a few days</p></header>
       <div class="g">
         <p class="c-lead">Write in English or Chinese. Coffee chats welcome.</p>
         <div class="c-main" data-rv>
@@ -888,7 +966,7 @@ if(!RM && matchMedia('(pointer:fine)').matches){
 
 /* ---------- WeChat Channels ---------- */
 const channelsDialog = $('#channelsDialog');
-$('#channelsBtn').addEventListener('click', () => channelsDialog.showModal());
+document.querySelectorAll('#channelsBtn,[data-channels-open]').forEach(button => button.addEventListener('click', () => channelsDialog.showModal()));
 $('#channelsClose').addEventListener('click', () => channelsDialog.close());
 channelsDialog.addEventListener('click', e => {
   const r = channelsDialog.getBoundingClientRect();
